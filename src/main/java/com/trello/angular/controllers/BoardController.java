@@ -10,8 +10,13 @@ import java.util.Optional;
 @RestController
 public class BoardController {
 
-    @Autowired
+    private final
     BoardRepository boardRepository;
+
+    @Autowired
+    public BoardController(BoardRepository boardRepository) {
+        this.boardRepository = boardRepository;
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/boards")
     public Iterable<Board> boards() {

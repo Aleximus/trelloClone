@@ -3,14 +3,11 @@ package com.trello.angular.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * Created by Alex on 28/06/2018.
- */
 @Document(collection = "board")
 public class Board {
     @Id
-    String id;
-    String name;
+    private String id;
+    private String name;
 
     public Board() {
     }
