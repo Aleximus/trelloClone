@@ -1,16 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BoardService} from './shared/board/board.service';
+import {HttpClientModule} from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import { BoardListComponent } from './board-list/board-list.component';
+import {MatToolbarModule, MatListModule, MatInputModule, MatCardModule, MatButtonModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BoardListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatListModule,
+    MatToolbarModule
   ],
-  providers: [],
+  providers: [BoardService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
